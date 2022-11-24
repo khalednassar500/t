@@ -35,13 +35,12 @@ const AddBooks = ({books, onUpdateShelf}) => {  // Functional Component
   const [query, setQuery] = useState('');
   const [queryResult, setQueryResult] = useState([]);
 
-  
   /*  This block of code will make the request wait for 3 seconds
     after the user has finished typing and then it will create the request
     " to avoid unnecessary requests " */
   const searchForBooks = (query) => {
     const search = async () => {
-      const data = await BooksAPI.search(query);
+      const data = await BooksAPI.search(query.trim());
       if (data.error) {
         setQueryResult([]);
       }else {
@@ -57,9 +56,9 @@ const AddBooks = ({books, onUpdateShelf}) => {  // Functional Component
   }
 
   const onUpdateQuery = (e) => {
-    setQuery(e.target.value.trim());
-    if (e.target.value.trim()) {
-      setTimer(e.target.value.trim());
+    setQuery(e.target.value);
+    if (e.target.value) {
+      setTimer(e.target.value);
     }else {
       setQueryResult([]);
     }
