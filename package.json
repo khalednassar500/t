@@ -2,7 +2,7 @@
   "name": "my-reads",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://khalednassar500.github.io",
+  "homepage": "https://khalednassar500.github.io/my-reads-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
